@@ -1,0 +1,16 @@
+name: CD Pipeline
+
+on:
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v4
+
+      - name: Build da aplicação com Docker
+        run: docker build -t meu-app-python .
