@@ -1,5 +1,12 @@
+import sys
+import os
+
+# Garante que o Python encontre o app.py na raiz do projeto
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
 from app import app
 
+# Cria o cliente de teste
 client = app.test_client()
 
 
